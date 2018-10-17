@@ -1,0 +1,73 @@
+dbmaster:
+  # image: bitnami/mysql:latest
+  image: mysql:5.7
+  ports:
+    - 13306:3306
+  volumes:
+    - mysql_master_data:/bitnami
+    - omni_db_master:/var/lib/mysql
+  environment:
+    - MYSQL_REPLICATION_MODE=master
+    - MYSQL_REPLICATION_USER=repl_user
+    - MYSQL_USER=my_user
+    - MYSQL_DATABASE=appdb
+    - MYSQL_ROOT_PASSWORD=1husf88sad
+    # ALLOW_EMPTY_PASSWORD is recommended only for development.
+    - ALLOW_EMPTY_PASSWORD=yes
+
+# dbslave:
+
+#   # image: bitnami/mysql:latest
+#   image: mysql:latest
+#   ports:
+#     - 13307:3306
+#   links:
+#     - dbmaster
+#   environment:
+#     - MYSQL_REPLICATION_MODE=slave
+#     - MYSQL_REPLICATION_USER=repl_user
+#     - MYSQL_USER=my_user
+#     - MYSQL_DATABASE=my_database
+#     - MYSQL_MASTER_HOST=dbmaster
+#     - MYSQL_MASTER_PORT_NUMBER=13306
+#     - MYSQL_ROOT_PASSWORD=1
+#     # ALLOW_EMPTY_PASSWORD is recommended only for development.
+#     - ALLOW_EMPTY_PASSWORD=yes
+
+adminer:
+    image: adminer
+    restart: always
+    ports:
+        - 18081:8080
+    links:
+      - dbmaster
+      # - dbslave
+
+webapp:
+    build: ct_app
+    ports:
+      - 18080:8080
+    links:
+      - dbmaster
+      - omniredis
+    volumes:
+      - ./ct_app/app:/home/app
+    environment:
+      - "MYSQL_DATABASE=dbmaster"
+
+
+omniredis:
+  image: redis:latest
+  command: redis-server --requirepass ij129Ias01
+  ports:
+    - 16379:6379
+
+#webspa:
+#    build: ct_spa
+#    ports:
+#      - 13000:3000
+#    links:
+#      - webapp
+#    volumes:
+#      - ./ct_spa/spa:/home/app
+
