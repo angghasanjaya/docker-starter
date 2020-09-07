@@ -70,4 +70,3 @@ omniredis:
 #      - webapp
 #    volumes:
 #      - ./ct_spa/spa:/home/app
-
