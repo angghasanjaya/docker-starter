@@ -24,5 +24,6 @@ WORKDIR $HOME
 #RUN mkdir ./app/storage
 RUN chmod 777 storage/ -R
 RUN composer install
+RUN npm install
 
 CMD php artisan serve --host=0.0.0.0 --port=8080; php artisan migrate
