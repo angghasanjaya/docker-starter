@@ -23,7 +23,5 @@ COPY ./app $HOME/
 WORKDIR $HOME
 #RUN mkdir ./app/storage
 RUN chmod 777 storage/ -R
-RUN composer install
-RUN npm install
 
-CMD php artisan serve --host=0.0.0.0 --port=8080; php artisan migrate
+CMD bash -c "composer install && npm install && cp .env.example .env && php artisan serve --host 0.0.0.0 --port 8080 && php artisan migrate"
