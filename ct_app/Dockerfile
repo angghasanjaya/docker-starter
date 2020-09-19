@@ -24,4 +24,6 @@ WORKDIR $HOME
 #RUN mkdir ./app/storage
 RUN chmod 777 storage/ -R
 
-CMD bash -c "composer install && npm install && cp .env.example .env && php artisan serve --host 0.0.0.0 --port 8080 && php artisan migrate"
+CMD bash -c "npm install --global cross-env"
+
+CMD bash -c "composer install && npm install --no-bin-links && npm run dev && php artisan serve --host 0.0.0.0 --port 8080"
