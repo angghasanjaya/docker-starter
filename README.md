@@ -39,4 +39,4 @@ You can easily config services inside `docker-compose.yaml`
 
 
 ### NOTES FOR WINDOWS USER. IMPORTANT!
-This project must be clone inside `C:\Users\yourusername` folder. If not, your project WILL NOT BE COPIED into your docker containers.
+I dont know if its okay to not do this, but for prevent any weird erros please clone this project inside `C:\Users\yourusername` folder. If not, your project WILL NOT BE COPIED into your docker containers.
