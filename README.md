@@ -5,7 +5,7 @@ My default docker settings for laravel project. Based on my project team setting
 - Install Docker compose (https://docs.docker.com/compose/install/)
 - Put your project directory into ct_app
 - rename it as "app" folder
-- set your mysql connection environment: <br />
+- set your mysql connection and redis environment: <br />
 
 DB_CONNECTION=mysql
 
@@ -18,6 +18,14 @@ DB_DATABASE=yourdbname
 DB_USERNAME=root
 
 DB_PASSWORD=1husf88sad
+
+REDIS_HOST=omniredis
+
+REDIS_PASSWORD=ij129Ias01
+
+REDIS_PORT=6379
+
+CACHE_DRIVER=redis
 
 - run `docker-compose up --build` to build webapp
 
