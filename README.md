@@ -10,6 +10,8 @@ My default docker settings for laravel project. Based on my project team setting
 ## Services
 - Your webapp: `localhost:18080`
 - adminer: `localhost:18081` (user: root, pass: 1husf88sad)
+- redis (port: 16379)
+- mysql 5.7 (port:13306)
 
 You can easily config services inside `docker-compose.yaml`
 
