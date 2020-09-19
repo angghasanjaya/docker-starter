@@ -1,5 +1,5 @@
 # docker-starter
-My default docker settings for laravel project. Based on my project team settings
+My default docker settings for laravel project. Based on my project team settings (https://github.com/angghasanjaya/docker-starter)
 
 ## How to use
 - Install Docker compose (https://docs.docker.com/compose/install/)
