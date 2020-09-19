@@ -4,4 +4,8 @@ My default docker settings for laravel project. Based on my project team setting
 ## How to use
 - Put your project directory into ct_app
 - rename it as "app" folder
-- run `docker-compose up --build` for first run
+- run `docker-compose up -d`
+
+
+### NOTES FOR WINDOWS USER. IMPORTANT!
+This project must be clone inside `C:\Users\yourusername` folder. If not, your project WILL NOT BE COPIED into your docker containers.
