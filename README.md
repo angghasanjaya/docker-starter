@@ -5,13 +5,20 @@ My default docker settings for laravel project. Based on my project team setting
 - Install Docker compose (https://docs.docker.com/compose/install/)
 - Put your project directory into ct_app
 - rename it as "app" folder
-- set .env like this:
-`DB_CONNECTION=mysql
+- set .env like this: <br />
+
+DB_CONNECTION=mysql
+
 DB_HOST=dbmaster
+
 DB_PORT=3306
+
 DB_DATABASE=yourdbname
+
 DB_USERNAME=root
-DB_PASSWORD=1husf88sad`
+
+DB_PASSWORD=1husf88sad
+
 - run `docker-compose up --build` to build webapp
 
 ## Services
