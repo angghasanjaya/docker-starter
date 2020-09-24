@@ -35,7 +35,7 @@ My default docker settings for laravel project. Based on my project team setting
 - redis
 - mysql 5.7
 
-You can easily config services inside `docker-compose.yaml`
+You can easily config services at `docker-compose.yaml`
 
 
 ### NOTES FOR WINDOWS USER. IMPORTANT!
