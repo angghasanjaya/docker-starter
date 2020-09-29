@@ -21,6 +21,7 @@ ENV NODE_ENV=development
 COPY ./app $HOME/
 
 WORKDIR $HOME
+
 #RUN mkdir ./app/storage
 RUN chmod 777 storage/ -R
 
