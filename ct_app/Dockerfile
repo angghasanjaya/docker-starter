@@ -12,7 +12,7 @@ RUN docker-php-ext-enable mcrypt
 #RUN pecl install -o -f xdebug \
 #    && rm -rf /tmp/pear \
 #    && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20121212/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini \
- 
+
 RUN useradd --user-group --create-home --shell /bin/false app
 
 ENV HOME=/home/app
@@ -24,6 +24,12 @@ WORKDIR $HOME
 #RUN mkdir ./app/storage
 RUN chmod 777 storage/ -R
 
-CMD bash -c "npm install --global cross-env"
+RUN composer install
 
-CMD bash -c "composer install && npm install --no-bin-links && npm run dev && php artisan serve --host 0.0.0.0 --port 8080 && php artisan migrate"
+RUN npm install --global cross-env
+
+RUN npm install --no-bin-links
+
+RUN npm run dev 
+
+CMD bash -c "php artisan serve --host 0.0.0.0 --port 8080 && php artisan migrate"
