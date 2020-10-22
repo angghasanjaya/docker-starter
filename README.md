@@ -39,4 +39,4 @@ You can easily config services at `docker-compose.yaml`
 
 
 ### NOTES FOR WINDOWS USER. IMPORTANT!
-I don't know if it's okay not do this,, but for prevent any weird errors please clone this project inside `C:\Users\yourusername` folder
+For prevent any weird errors please clone this project inside `C:\Users\yourusername` folder
