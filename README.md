@@ -39,4 +39,4 @@ You can easily config services at `docker-compose.yaml`
 
 
 ### NOTES FOR WINDOWS USER. IMPORTANT!
-For prevent any weird errors please clone this project inside `C:\Users\yourusername` folder
+USE POWERSHELL FOR RUNNING ALL DOCKER COMMANDS!
