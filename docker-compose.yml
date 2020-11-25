@@ -50,8 +50,8 @@ webapp:
     links:
       - dbmaster
       - omniredis
-    volumes:
-      - ./ct_app/app:/home/app
+#     volumes:
+#       - ./ct_app/app:/home/app
     environment:
       - "MYSQL_DATABASE=dbmaster"
 
