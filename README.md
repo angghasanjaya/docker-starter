@@ -26,7 +26,14 @@ My default docker settings for laravel project. Based on my project team setting
   REDIS_PORT=6379
 
   CACHE_DRIVER=redis
-
+  
+- if your project doesnt include vendors on it, please run `docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php80-composer:latest \
+    composer install --ignore-platform-reqs` to install laravel dependencies
+    
 - run `docker-compose up --build` to build webapp
 
 ## Services
