@@ -4,8 +4,8 @@ My default docker settings for laravel project. Based on my project team setting
 ## How to use
 - Install Docker compose (https://docs.docker.com/compose/install/)
 - Put your project directory into ct_app
-- rename your project folder as "app" folder
-- set your mysql connection and redis environment: <br />
+- rename your project folder to "app"
+- set your laravel `.env` : <br />
 
   DB_CONNECTION=mysql
 
@@ -13,7 +13,7 @@ My default docker settings for laravel project. Based on my project team setting
 
   DB_PORT=3306
 
-  DB_DATABASE=yourdbname
+  DB_DATABASE=appdb
 
   DB_USERNAME=root
 
