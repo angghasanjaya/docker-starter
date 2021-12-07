@@ -2,7 +2,7 @@ FROM php:7
 
 RUN apt-get update -y && apt-get install -y openssl zip unzip git wget gnupg libmcrypt-dev libpng-dev libzip-dev
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y nodejs
+# RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && apt-get install -y nodejs
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN pecl install mcrypt-1.0.3
@@ -27,10 +27,10 @@ RUN chmod 777 storage/ -R
 
 RUN composer install
 
-RUN npm install --global cross-env
+# RUN npm install --global cross-env
 
-RUN npm install --no-bin-links
+# RUN npm install --no-bin-links
 
-RUN npm run dev 
+# RUN npm run dev 
 
 CMD bash -c "php artisan serve --host 0.0.0.0 --port 8080 && php artisan migrate"
