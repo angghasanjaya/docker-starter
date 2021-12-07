@@ -32,7 +32,7 @@ My default docker settings for laravel project. Based on my project team setting
     -v $(pwd):/var/www/html \
     -w /var/www/html \
     laravelsail/php80-composer:latest \
-    composer install --ignore-platform-reqs` to install laravel dependencies
+    composer install --ignore-platform-reqs` inside your project "app" folder to install laravel dependencies
     
 - run `docker-compose up --build` to build webapp
 
