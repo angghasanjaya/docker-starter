@@ -27,13 +27,8 @@ My default docker settings for laravel project. Based on my project team setting
 
   CACHE_DRIVER=redis
   
-- if your project doesnt include vendors on it, please run `docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v $(pwd):/var/www/html \
-    -w /var/www/html \
-    laravelsail/php80-composer:latest \
-    composer install --ignore-platform-reqs` inside your project "app" folder to install laravel dependencies
-    
+- if your project doesnt include vendors on it, please run this command inside your project "app" folder to install laravel dependencies 
+  https://pastebin.com/raw/s2Y2QpQN
 - run `docker-compose up --build` to build webapp
 
 ## Services
